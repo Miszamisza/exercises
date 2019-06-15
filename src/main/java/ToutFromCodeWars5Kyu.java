@@ -5,7 +5,7 @@ import java.util.Map;
 
 
 
-public class Tour {
+public class ToutFromCodeWars5Kyu {
 //TODO think about simplifier code
     static int tour(String[] arrFriends, String[][] friendsTowns, Map<String, Double> townsDistanceFromGrandma) {
         double sumOfDistances = 0;
