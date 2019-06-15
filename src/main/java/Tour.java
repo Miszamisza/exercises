@@ -6,26 +6,27 @@ import java.util.Map;
 
 
 public class Tour {
-//Two test passed on codewars, Grandrma propably can go back to previous friend//TODO think about simplifier code and solve problem
-    public static int tour(String[] arrFriends, String[][] ftwns, Map<String, Double> h) {
-        double sum = 0;
-        String e1="";
-        ArrayList<Double> list = new ArrayList<Double>();
-        for (int i = 0; i < arrFriends.length; i++) {
-            String s = arrFriends[i];
-            for (String[] element : ftwns
+//TODO think about simplifier code
+    static int tour(String[] arrFriends, String[][] friendsTowns, Map<String, Double> townsDistanceFromGrandma) {
+        double sumOfDistances = 0;
+        String nextFriendToVisti="";
+        ArrayList<Double> listOfDistances = new ArrayList<Double>();
+
+        for (String s : arrFriends) {
+            for (String[] element : friendsTowns
             ) {
                 if (element[0].equals(s)) {
-                    e1 = element[1];
+                    nextFriendToVisti = element[1];
                 }
             }
-            list.add(h.get(e1));
+            listOfDistances.add(townsDistanceFromGrandma.get(nextFriendToVisti));
         }
 
-        for (int i = 0; i < list.size()-1; i++) {
-            sum+= Math.round(Math.sqrt(Math.pow(list.get(i+1),2) - Math.pow(list.get(i),2)));
+        for (int i = 0; i < listOfDistances.size()-1; i++) {
+            sumOfDistances+= Math.sqrt(Math.pow(listOfDistances.get(i+1),2) - Math.pow(listOfDistances.get(i),2));
         }
-        sum+=list.get(0)+list.get(list.size()-1);
-        return (int)sum;
+        Math.round(sumOfDistances);
+        sumOfDistances+=listOfDistances.get(0)+listOfDistances.get(listOfDistances.size()-1);
+        return (int)sumOfDistances;
     }
 }
