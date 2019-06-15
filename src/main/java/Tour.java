@@ -6,7 +6,7 @@ import java.util.Map;
 
 
 public class Tour {
-
+//Two test passed on codewars, Grandrma propably can go back to previous friend//TODO think about simplifier code and solve problem
     public static int tour(String[] arrFriends, String[][] ftwns, Map<String, Double> h) {
         double sum = 0;
         String e1="";
