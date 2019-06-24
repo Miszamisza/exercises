@@ -4,8 +4,8 @@ public class PerfectPower {
         int[] result = new int[2];
         for (int i = 2; i < Math.log(n) / Math.log(2) + 1; i++) {
             for (int j = 2; Math.pow(j, i) <= n; j++) {
-                if (Math.pow(i, j)==n) {
-                 return result = new int[]{i, j};
+                if (Math.pow(j, i)==n) {
+                 return result = new int[]{j,i};
                 }
             }
         }
