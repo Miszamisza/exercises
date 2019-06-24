@@ -1,4 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.GOTO;
 
 public class PerfectPower {
     public static int[] isPerfectPower(int n) {
