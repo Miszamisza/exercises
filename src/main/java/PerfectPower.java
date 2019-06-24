@@ -1,16 +1,16 @@
+import com.sun.org.apache.bcel.internal.generic.GOTO;
+
 public class PerfectPower {
     public static int[] isPerfectPower(int n) {
         int[] result = new int[2];
-        for (int i = 0; i <= n/2 ; i++) {
-            for (int j = 0; j <= n/2; j++) {
+        for (int i = 2; i < Math.log(n) / Math.log(2) + 1; i++) {
+            for (int j = 2; Math.pow(j, i) <= n; j++) {
                 if (Math.pow(i, j)==n) {
-                 result = new int[]{i, j};
+                 return result = new int[]{i, j};
                 }
             }
         }
-        if (result[0]==0){
-            result=null;
-        }
-        return result;
+
+        return null;
     }
 }
